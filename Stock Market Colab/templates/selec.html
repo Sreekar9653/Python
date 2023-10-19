@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+	<head>
+	<link rel="stylesheet" href="{{url_for("static",filename="newcss.css")}}">
+	<title>Fill Details</title>
+	</head>
+	<body bgcolor=deepskyblue>
+		<center>
+		<div class="md" style='height:92vh;width:92vw;position:absolute;top:0vh;left:0vw;margin-left:4vw;background-image:url("{{url_for("static",filename="gradient.png")}}");margin-top:5vh;border:1px solid #dddddd'>
+			<center><br><br><br><br><br><br>
+			<form action="{{url_for("py2")}}" method="post">
+				<table style='vertical-align:middle;text-align:center; background-color:#eeeeee' cellpadding=10 cellspacing=5>
+					<tr>
+						<th class=uh>Select date and time interval</th>
+						<th class=nb>     </th>
+						<th class=uh colspan=2>Select the data you want</th>
+					</tr>
+					<tr>
+						<td>Select date : <input type=date name=d1 required></td>
+						<td class=nb>     </td>
+						<td><input type=checkbox value="AAPL" name="r1"> Apple</td>
+						<td><input type=checkbox value="GOOG" name="r1"> Google</td>
+					</tr>
+					<tr>
+						<td>Compare with data&nbsp;&nbsp;
+							<select name="d2"> 
+								<option selected="selected">2 months ago</option>
+								<option>5 months ago</option>
+								<option>1 year ago</option>
+								<option>2 years ago</option>
+								<option>5 years ago</option>
+							</select>
+						</td>
+						<td class=nb>     </td>
+						<td><input type=checkbox value="MSFT" name="r1"> Microsoft</td>
+						<td><input type=checkbox value="AMZN" name="r1"> Amazon</td>
+					</tr>
+					<tr>
+						<td colspan=4>
+							<input type=submit style='border:4px groove lightgray;border-radius:15px;opacity:1;font-size:30px;color:black' value="Start prediction">
+						</td>
+					</tr>
+				</table>
+			</form>
+			<br><br>
+			<div style="text-align:left;width:fit-content">
+				<ul style="letter-spacing:2px;color:white;" type="disc">
+					<li> Date selected is the date upto which we want to predict</li><br>
+					<li> You must select at least one checkbox</li><br>
+					<li> Time interval specifies how old data should be used for making graphs
+				</ul>
+			</div>
+			</center>
+		</div>
+		</center>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!Doctype html>
+<html>
+	<head>
+	<link rel="stylesheet" href="{{url_for("static",filename="newcss.css")}}">
+	<title>Please wait</title>
+	
+	<script language="JavaScript" type = "text/javascript">
+		{%if tc==8%}
+		setTimeout(ref,90000);
+		{%elif tc==10 or tc==5%}
+		setTimeout(ref,15000);
+		{%else%}
+		setTimeout(ref,1000);
+		{%endif%}
+		function ref(){
+			window.location.replace("{{url_for("py2")}}");
+		}
+		function incl(a){
+			b=a;
+			if(a!=-1) {setTimeout(inc,1000);}
+		}
+		function inc(){
+			document.getElementById("colorful").style.width=Math.ceil((90-b)*(10)/9)+"%";
+			document.getElementById("colorful").innerText=Math.ceil((90-b)*(10)/9)+"%";
+			document.getElementById("names").innerText="Loading "+Math.ceil((90-b)*(10)/9)+"% ... Please Wait!!!";
+			incl(b-1);
+		}
+	</script>
+	</head>
+	<body bgcolor=deepskyblue>
+		<center>
+		<h5 style="letter-spacing:1px">Please dont press back or close the browser!!</h5>
+		<div class="md" style='height:92vh;width:92vw;position:absolute;top:0vh;left:0vw;margin-left:4vw;background-image:url("{{url_for("static",filename="gradient.png")}}");margin-top:5vh;border:1px solid #dddddd'>
+			<br><br><br><br><br><br><br>
+			<div id="progressBar" style="padding:3px;border-radius:15px;border:2px solid gold;background-color:white;overflow:hidden;width:90%">
+				<p id="colorful" style="background-color:yellow;height:18px;width:{{width}}%;color:black;">{{width}}%</p>
+			</div>
+			<br><br><br>
+			<h3 id="names" style="color:white">Loading {{width}}% ... Please wait</h3><br><br>
+			<p style="color:white">{{pgstat}}</p>
+		</div>
+		</center>
+	</body>
+</html>

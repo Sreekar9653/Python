@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+	<head>
+	<link rel="stylesheet" href="{{ url_for('static',filename='newcss.css') }}">
+	<title>StockHome</title>
+	</head>
+	<body bgcolor=deepskyblue>
+		<center>
+		<img src="{{ url_for('static',filename='stocki.png') }}"  style='height:92vh;width:92vw;margin-top:4vh;margin:left:4vw;opacity:0.5;'>
+		<div class="md" style='height:92vh;width:92vw;position:absolute;top:0vh;left:0vw;margin-left:4vw;margin-top:5vh;border:1px solid #dddddd'>
+			<center><br><br><br><br><br><br><br>
+			<form action="/pyfl" method="post">
+				<p style='text-align:center;width:fit-content;background-color:white;font-size:30px;color:black;
+					padding-left:2vw;padding-right:2vw;border-radius:15px'>
+					Welcome to StockHome
+				</p><br><br><br><br><br>
+				<input type="submit" style='border:4px groove lightgray;border-radius:15px;opacity:1;font-size:30px;color:black' value="Start prediction">
+			</form>
+			</center>
+		</div>
+		</center>
+	</body>
+</html>

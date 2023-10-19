@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Signup Form</title>
+	<link rel="stylesheet" href="newcss.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body style="background-color:darkblue">
+        <img src="Servletlogo.png" style="border:1px solid;position: relative;top:10%;left:35%" alt="">
+        <hr>
+    <center>
+        <h1> Enter your details</h1>
+        <form name="f1" action="https://localhost:5000/signup" method="POST">
+            <table cellspacing="10">
+                <tr><td>Enter name : </td><td><input type="text" name="name" pattern="[A-Za-z]+" required oninvalid="alert('Name should have Characters only')"></td></tr>
+                <tr><td>Enter address : </td><td><textarea name="address" rows="4" cols="25" required></textarea></td></tr>
+                <tr><td>Enter email : </td><td><input type="email" name="email" required></td></tr>
+                <tr><td>Enter phone number: </td><td><input type="text" name="phone" pattern="\d{10}" oninvalid="alert('Only 10 Digits accepted in phone number')"></td></tr>                
+                <tr><td>Enter username: </td><td><input type="text" name="user" required></td></tr>
+                <tr><td>Enter password : </td><td><input type="password" name="pass" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&]).{8,18}$" required oninvalid="alert('At least one uppercase letter, one lowercase letter, one number, one symbol\nMin 8 characters, Max 18 characters\nin password')" oninput="setCustomValidity('')"></td></tr>
+                <input type="hidden" name="ls" value="signup">
+                <tr><td></td><td><input type="submit" name="s1"></td></tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>
